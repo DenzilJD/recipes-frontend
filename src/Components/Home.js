@@ -56,6 +56,11 @@ export const Home = () => {
 
     const displayRecipes = recipes.map(t => <Card recipe={t} recipeType={recipeType} updateRecipe={updateRecipe} deleteRecipe={deleteRecipe} key={t._id} />);
 
+    const logout=()=>{
+        sessionStorage.clear();
+        navigate('/auth');
+    }
+
     return (
         <div>
             <header className="bg-white w-full flex items-center justify-center fixed top-0 max-sm:static -z-0 py-4 shadow-lg">
@@ -65,6 +70,7 @@ export const Home = () => {
                         <li>Home</li>
                         <li>Features</li>
                         <li>Contact Us</li>
+                        <li className='text-red-600 hover:cursor-pointer' onClick={logout}>Log Out</li>
                     </ul>
                 </nav>
             </header>
