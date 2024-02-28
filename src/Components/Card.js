@@ -1,15 +1,22 @@
 import React from 'react';
-import food1 from '../assets/food-2.jpg';
+import food1 from '../assets/food-1.jpg';
+import food2 from '../assets/food-2.jpg';
+import food3 from '../assets/food-3.jpg';
+import food4 from '../assets/food-4.jpg';
+import food5 from '../assets/food.jpg';
 import Modal from './Modal';
 import FullView from './FullView';
 
 export const Card = ({ recipe, recipeType, updateRecipe, deleteRecipe }) => {
     const displayIngredients = recipe.ingredients.map(t => <li key={t._id}>{t.name}</li>);
 
+    const foods=[food1,food2,food3,food4,food5];
+    const k=Math.floor(Math.random()*5);
+    
     return (
         <div className="m-4 max-w-sm w-full">
             <div className="h-48 flex-none bg-cover rounded-t text-center overflow-hidden"
-                style={{ backgroundImage: `url(${food1})` }}>
+                style={{ backgroundImage: `url(${foods[k]})` }}>
             </div>
             <div className="border-r border-b border-l border-gray-400 bg-white rounded-b p-4 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
